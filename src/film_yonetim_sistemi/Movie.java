@@ -68,13 +68,11 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Movie{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", director='" + director + '\'' +
-                ", releaseYear=" + releaseYear +
-                ", genre='" + genre + '\'' +
-                ", rating=" + rating +
-                '}';
+        // Rating için özel format
+        String ratingStr = String.format("%.1f", rating);
+
+        // Film bilgilerini istediğiniz formatta döndürme
+        return String.format("%-5d | %-30s | %-20s | %-4d | %-10s | %s",
+                id, title, director, releaseYear, genre, ratingStr);
     }
 }
